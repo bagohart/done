@@ -232,7 +232,7 @@ if set -q __done_enabled
 
             # don't notify if command matches exclude list
             for pattern in $__done_exclude
-                if string match -qr $pattern $argv[1]
+                if string match -qr -- $pattern $argv[1]
                     return
                 end
             end
