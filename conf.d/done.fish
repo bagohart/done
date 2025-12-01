@@ -24,7 +24,7 @@ if not status is-interactive
     exit
 end
 
-set -g __done_version 1.20.0
+set -g __done_version 1.20.1
 
 function __done_run_powershell_script
     set -f powershell_exe (command --search "powershell.exe")
@@ -263,7 +263,7 @@ if set -q __done_enabled
                 printf "\x1b]99;i=done:d=0;$title\x1b\\"
                 printf "\x1b]99;i=done:d=1:p=body;$message\x1b\\"
 
-            else if test "$TERM_PROGRAM" = "ghostty"
+            else if test "$TERM_PROGRAM" = ghostty
                 printf "\x1b]777;notify;%s;%s\x1b\\" "$title" "$message"
 
             else if type -q terminal-notifier # https://github.com/julienXX/terminal-notifier
